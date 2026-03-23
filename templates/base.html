@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>{% block title %}App{% endblock %}</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+<nav class="bg-gray-800 text-white py-3"><div class="container mx-auto px-4"><a href="/" class="font-bold text-xl">App</a></div></nav>
+{% if messages %}<div class="container mx-auto px-4 mt-4">{% for m in messages %}<div class="bg-green-100 text-green-700 px-4 py-2 rounded mb-2">{{ m }}</div>{% endfor %}</div>{% endif %}
+<main class="container mx-auto px-4 py-8">{% block content %}{% endblock %}</main>
+</body></html>
